@@ -173,6 +173,7 @@ export default function Posts({ posts, users, comments, setRefetch }) {
       .then((response) => {
         console.log("Response:", response.data);
         setTextInputs({ ...textInputs, [postId]: "" }); // Clear the input field after submission
+        setRefetch(prev => !prev);
       })
       .catch((error) => {
         console.error("Error:", error);

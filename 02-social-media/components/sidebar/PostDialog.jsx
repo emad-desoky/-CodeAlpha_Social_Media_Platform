@@ -16,6 +16,7 @@ import Image from "next/image";
 export default function PostDialog({ openDialog, handleCloseDialog, loggedUser, setRefetch}) {
   const [postTitle, setPostTitle] = useState("");
   const [postContent, setPostContent] = useState("");
+  const [postImage, setPostImage] = useState("");
   const [media, setMedia] = useState(null);
 
   const dialogProps = useSpring({
@@ -37,7 +38,7 @@ export default function PostDialog({ openDialog, handleCloseDialog, loggedUser, 
       username: loggedUser.username, // Replace with actual username
       date: new Date().toISOString(),
       post: {
-        image: media,
+        image: postImage,
         text: postContent,
       },
       likes: 0,
@@ -81,6 +82,19 @@ export default function PostDialog({ openDialog, handleCloseDialog, loggedUser, 
             variant="standard"
             value={postContent}
             onChange={(e) => setPostContent(e.target.value)}
+            inputProps={{ maxLength: 280 }}
+          />
+          <TextField
+            margin="dense"
+            id="image"
+            label="Post Image"
+            type="text"
+            fullWidth
+            multiline
+            rows={4}
+            variant="standard"
+            value={postImage}
+            onChange={(e) => setPostImage(e.target.value)}
             inputProps={{ maxLength: 280 }}
           />
           <input
