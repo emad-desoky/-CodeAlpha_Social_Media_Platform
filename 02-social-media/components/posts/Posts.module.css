@@ -1,0 +1,38 @@
+.container {
+  width: 100%;
+  max-width: 800px;
+}
+
+.card {
+  margin-bottom: 16px;
+  background-color: rgba(30, 9, 9, 0.2);
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5); /* Added shadow effect */
+}
+
+.actions {
+  display: flex;
+}
+
+.comment {
+  display: flex;
+  margin-bottom: 12px;
+}
+
+.commentField {
+  margin-top: 20px;
+  color: #eee8e8;
+  background-color: #333; /* Make the background darker for visibility */
+  border: 1px solid #555; /* Add a border to make it look defined */
+  border-radius: 4px; /* Rounded corners for better appearance */
+}
+
+.commentButton {
+  margin-top: 8px;
+}
+
+.commentSeparator {
+  border: 10;
+  margin: 8px 0;
+}

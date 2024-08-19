@@ -1,0 +1,75 @@
+[
+  {
+    "id": "1",
+    "postId": "1",
+    "username": "jane_smith",
+    "text": "Looks like a lot of fun!",
+    "date": "2024-08-01",
+    "likes": 1
+  },
+  {
+    "id": "1",
+    "postId": "1",
+    "username": "jane_smith",
+    "text": "Looks like a lot of fun!",
+    "date": "2024-08-01",
+    "likes": 1
+  },
+  {
+    "id": "2",
+    "postId": "1",
+    "username": "alex_jones",
+    "text": "Beautiful view!",
+    "date": "2024-08-01",
+    "likes": 5
+  },
+  {
+    "id": "fd785e66-7dbd-4a67-9702-2fb6875bff6e",
+    "postId": "1",
+    "text": "",
+    "username": "q",
+    "date": "2024-08-11T14:23:52.325Z"
+  },
+  {
+    "id": "d8f9f646-ed63-488e-a1c4-23df3c294dc3",
+    "postId": "1",
+    "text": "",
+    "username": "q",
+    "date": "2024-08-11T14:24:56.253Z"
+  },
+  {
+    "id": "8bca76d9-5129-4e16-8bbb-1b714a3c676a",
+    "postId": "1",
+    "text": "",
+    "username": "q",
+    "date": "2024-08-11T14:25:42.485Z"
+  },
+  {
+    "id": "f37c409c-deb0-4003-8b3a-9489a0714a5b",
+    "postId": "105ca97e-6074-467b-8353-3d16f78de34f",
+    "text": "asdasd",
+    "username": "q",
+    "date": "2024-08-11T14:30:33.086Z"
+  },
+  {
+    "id": "b9a91e06-21f8-49eb-8297-78e7f26c79c6",
+    "postId": "6f2277b1-7072-47fa-b8e9-78a1d2abda53",
+    "text": "asdasd",
+    "username": "q",
+    "date": "2024-08-11T14:38:17.174Z"
+  },
+  {
+    "id": "79a453a7-04e6-4c79-83ab-8f103f33d393",
+    "postId": "105ca97e-6074-467b-8353-3d16f78de34f",
+    "text": "ASDASD",
+    "username": "q",
+    "date": "2024-08-11T14:39:12.575Z"
+  },
+  {
+    "id": "926ca622-34df-482d-9cad-f7cb2bc5cd85",
+    "postId": "1",
+    "text": "asdasd",
+    "username": "q",
+    "date": "2024-08-12T18:47:59.376Z"
+  }
+]

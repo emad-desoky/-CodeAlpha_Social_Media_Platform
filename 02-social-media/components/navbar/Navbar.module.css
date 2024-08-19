@@ -1,0 +1,8 @@
+/* Navbar.module.css */
+.icon {
+  margin: 0 10px; /* Adjust spacing as needed */
+}
+
+.icon:hover {
+  color: #556cdc; /* Hover color */
+}

@@ -1,0 +1,185 @@
+[
+  {
+    "username": "john_doe",
+    "password": "password123",
+    "age": 28,
+    "email": "john.doe@example.com",
+    "country": "United States",
+    "pfp": "https://example.com/images/john_doe.jpg",
+    "likesReceived": 20,
+    "likesGiven": 15,
+    "likedPosts": [],
+    "friends": [],
+    "following": [],
+    "followers": [
+      "Thexxkiller",
+      "q"
+    ]
+  },
+  {
+    "username": "jane_smith",
+    "password": "qwerty789",
+    "age": 32,
+    "email": "jane.smith@example.com",
+    "country": "Canada",
+    "pfp": "https://example.com/images/jane_smith.jpg",
+    "likesReceived": 10,
+    "likesGiven": 8,
+    "likedPosts": [],
+    "friends": [],
+    "following": [
+      "1a2b3c4d",
+      "4d5e6f7g"
+    ],
+    "followers": [
+      "1a2b3c4d"
+    ]
+  },
+  {
+    "username": "emad_desoky",
+    "password": "emad2024",
+    "age": 25,
+    "email": "emad.desoky@example.com",
+    "country": "Egypt",
+    "pfp": "https://example.com/images/emad_desoky.jpg",
+    "likesReceived": 30,
+    "likesGiven": 25,
+    "likedPosts": [],
+    "friends": [],
+    "following": [
+      "1a2b3c4d",
+      "4d5e6f7g"
+    ],
+    "followers": [
+      "1a2b3c4d",
+      "2b3c4d5e"
+    ]
+  },
+  {
+    "username": "sara_lee",
+    "password": "pass4567",
+    "age": 29,
+    "email": "sara.lee@example.com",
+    "country": "Australia",
+    "pfp": "https://example.com/images/sara_lee.jpg",
+    "likesReceived": 5,
+    "likesGiven": 10,
+    "likedPosts": [],
+    "friends": [],
+    "following": [
+      "3c4d5e6f"
+    ],
+    "followers": [
+      "2b3c4d5e"
+    ]
+  },
+  {
+    "username": "michael_brown",
+    "password": "mike1234",
+    "age": 35,
+    "email": "michael.brown@example.com",
+    "country": "United Kingdom",
+    "pfp": "https://example.com/images/michael_brown.jpg",
+    "likesReceived": 8,
+    "likesGiven": 12,
+    "likedPosts": [],
+    "friends": [],
+    "following": [
+      "1a2b3c4d"
+    ],
+    "followers": [
+      "3c4d5e6f"
+    ]
+  },
+  {
+    "username": "alex_jones",
+    "password": "123123",
+    "age": "22",
+    "email": "desko_emad112@yahoo.com",
+    "country": "caito",
+    "id": "1723149406088",
+    "pfp": "/path-to-your-profile-pic.jpg",
+    "likesReceived": 0,
+    "likesGiven": 0,
+    "likedPosts": [],
+    "friends": [],
+    "following": [],
+    "followers": []
+  },
+  {
+    "username": "q",
+    "password": "123",
+    "age": "22",
+    "email": "desko_emad112@yahoo.com",
+    "country": "caito",
+    "id": "1723149406088",
+    "pfp": "/path-to-your-profile-pic.jpg",
+    "likesReceived": 0,
+    "likesGiven": 0,
+    "likedPosts": [
+      "3b621df9-2ccd-40f6-b8f8-b6c53aa8c45c",
+      "1",
+      "cbbcc716-0a25-4623-bbca-aaba9701ec2a"
+    ],
+    "friends": [],
+    "following": [
+      "w"
+    ],
+    "followers": [
+      "Thexxkiller"
+    ]
+  },
+  {
+    "username": "asdsa1231",
+    "password": "123213",
+    "age": "11",
+    "email": "desko_emad112@yahoo.com",
+    "country": "caito",
+    "id": "1723149672491",
+    "pfp": "/path-to-your-profile-pic.jpg",
+    "likesReceived": 0,
+    "likesGiven": 0,
+    "likedPosts": [],
+    "friends": [],
+    "following": [],
+    "followers": []
+  },
+  {
+    "username": "w",
+    "password": "123",
+    "age": "22",
+    "email": "desko_emad@yahoo.com",
+    "country": "cairo",
+    "id": "1723201623658",
+    "pfp": "/path-to-your-profile-pic.jpg",
+    "likesReceived": 0,
+    "likesGiven": 0,
+    "likedPosts": [
+      "3b621df9-2ccd-40f6-b8f8-b6c53aa8c45c"
+    ],
+    "friends": [],
+    "following": [],
+    "followers": [
+      "w",
+      "Thexxkiller",
+      "q"
+    ]
+  },
+  {
+    "username": "Thexxkiller",
+    "password": "123456",
+    "age": "69",
+    "email": "killer@killer.com",
+    "country": "Killer Country",
+    "pfp": "https://ddragon.leagueoflegends.com/cdn/img/champion/tiles/Zed_0.jpg",
+    "likedReceived": 0,
+    "likesGiven": 0,
+    "likedPosts": [
+      "6f2277b1-7072-47fa-b8e9-78a1d2abda53",
+      "1"
+    ],
+    "friends": [],
+    "following": [],
+    "followers": []
+  }
+]
