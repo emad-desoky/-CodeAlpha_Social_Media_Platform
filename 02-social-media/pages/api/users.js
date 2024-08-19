@@ -77,7 +77,7 @@ export default async function handler(req, res) {
         where("username", "==", updatedElement.username)
       );
       const userSnapshot = await getDocs(userQuery);
-      
+
       if (userSnapshot.empty) {
         res.status(404).json({ error: "User not found" });
         return;
@@ -91,19 +91,20 @@ export default async function handler(req, res) {
       const usersSnapshot = await getDocs(usersCollection);
       const postsSnapshot = await getDocs(postsCollection);
 
-      const usersArr = usersSnapshot.docs.map(doc => ({
+      const usersArr = usersSnapshot.docs.map((doc) => ({
         id: doc.id,
-        ...doc.data()
+        ...doc.data(),
       }));
 
-      const postsArr = postsSnapshot.docs.map(doc => ({
+      const postsArr = postsSnapshot.docs.map((doc) => ({
         id: doc.id,
-        ...doc.data()
+        ...doc.data(),
       }));
 
-      const likedPosts = usersArr.map(u => u.likedPosts);
-      postsArr.map(post => post.likes = likedPosts.filter(lp => lp == post.id).length);
-   
+      const likedPosts = usersArr.map((u) => u.likedPosts).flat();
+      postsArr.map(
+        (post) => (post.likes = likedPosts.filter((lp) => lp == post.id).length)
+      );
 
       // Step 1: Delete existing documents
       const deleteBatch = writeBatch(db);
@@ -116,12 +117,11 @@ export default async function handler(req, res) {
       // Step 2: Add new documents
       const addBatch = writeBatch(db); // Use a batch to perform multiple writes
 
-      postsArr.forEach(post => {
+      postsArr.forEach((post) => {
         const postRef = doc(postsCollection, post.id); // Create a reference to the new document
         addBatch.set(postRef, post); // Set the new document data
-     });
-     await addBatch.commit(); // Commit the batch write
-
+      });
+      await addBatch.commit(); // Commit the batch write
 
       res.status(200).json(updatedElement);
     } catch (error) {
