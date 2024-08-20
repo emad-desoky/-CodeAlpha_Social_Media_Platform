@@ -173,7 +173,7 @@ export default function Posts({ posts, users, comments, setRefetch }) {
       .then((response) => {
         console.log("Response:", response.data);
         setTextInputs({ ...textInputs, [postId]: "" }); // Clear the input field after submission
-        setRefetch(prev => !prev);
+        setRefetch((prev) => !prev);
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -250,7 +250,7 @@ export default function Posts({ posts, users, comments, setRefetch }) {
                         className={styles.commentButton}
                         onClick={() => handleFollows(post.username)}
                       >
-                        {user.following.find((f) => f == post.username)
+                        {user.following?.find((f) => f == post.username)
                           ? "unfollow"
                           : "follow"}
                       </Button>
@@ -286,7 +286,7 @@ export default function Posts({ posts, users, comments, setRefetch }) {
                       aria-label="like"
                       onClick={(e) => handleLike(post.id)}
                     >
-                      {user.likedPosts.find((l) => l == post.id) ? (
+                      {user.likedPosts?.find((l) => l == post.id) ? (
                         <FavoriteIcon />
                       ) : (
                         <FavoriteBorderIcon />
