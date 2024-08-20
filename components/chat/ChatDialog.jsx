@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   Drawer,
   IconButton,
@@ -30,19 +30,17 @@ const gradientAnimation = {
   },
 };
 
+// Friends data directly included in the component
+const friendsData = [
+  { username: "JohnDoe", pfp: "/path/to/john.jpg" },
+  { username: "JaneSmith", pfp: "/path/to/jane.jpg" },
+  { username: "MichaelBrown", pfp: "/path/to/michael.jpg" },
+];
+
 const ChatDialog = () => {
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState("");
-  const [friends, setFriends] = useState(friendsData || []); // Initialize with imported data
-
-  useEffect(() => {
-    if (!friendsData || friendsData.length === 0) {
-      // If friendsData is not loaded via import, fetch it dynamically
-      fetch("/path/to/friends.json")
-        .then((response) => response.json())
-        .then((data) => setFriends(data));
-    }
-  }, []);
+  const [friends] = useState(friendsData); // Initialize with the provided data
 
   const toggleDrawer = () => {
     setOpen(!open);
