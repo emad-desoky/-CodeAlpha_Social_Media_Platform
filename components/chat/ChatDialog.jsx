@@ -15,6 +15,7 @@ import {
 import ChatIcon from "@mui/icons-material/Chat";
 import SearchIcon from "@mui/icons-material/Search";
 import { motion } from "framer-motion";
+import styles from "./ChatDialog.module.css";
 
 const gradientAnimation = {
   hidden: { backgroundPosition: "0% 0%" },
@@ -30,7 +31,6 @@ const gradientAnimation = {
   },
 };
 
-// Friends data directly included in the component
 const friendsData = [
   { username: "JohnDoe", pfp: "/path/to/john.jpg" },
   { username: "JaneSmith", pfp: "/path/to/jane.jpg" },
@@ -40,7 +40,7 @@ const friendsData = [
 const ChatDialog = () => {
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState("");
-  const [friends] = useState(friendsData); // Initialize with the provided data
+  const [friends] = useState(friendsData);
 
   const toggleDrawer = () => {
     setOpen(!open);
@@ -76,27 +76,13 @@ const ChatDialog = () => {
         anchor="right"
         open={open}
         onClose={toggleDrawer}
-        sx={{
-          width: 300,
-          flexShrink: 0,
-          "& .MuiDrawer-paper": {
-            width: 300,
-            color: "white",
-            background: "transparent",
-            boxShadow: "none",
-          },
-        }}
+        classes={{ paper: styles.drawerPaper }}
       >
         <motion.div
           initial="hidden"
           animate="visible"
           variants={gradientAnimation}
-          style={{
-            height: "100%",
-            width: "100%",
-            background: "linear-gradient(to right, #002147, #4b0082, #002147)",
-            backgroundSize: "200% 200%",
-          }}
+          className={styles.gradientBackground}
         >
           <Box sx={{ padding: 2 }}>
             <TextField
@@ -104,33 +90,22 @@ const ChatDialog = () => {
               placeholder="Search..."
               size="small"
               fullWidth
-              sx={{
-                background: "rgba(255, 255, 255, 0.1)",
-                borderRadius: "20px",
-                "& .MuiOutlinedInput-root": {
-                  borderRadius: "20px",
-                  "& fieldset": {
-                    border: "none",
-                  },
-                  "&:hover fieldset": {
-                    border: "none",
-                  },
-                  "&.Mui-focused fieldset": {
-                    border: "none",
-                  },
-                },
-              }}
+              className={styles.textField}
               InputProps={{
+                classes: { root: styles.outlinedInputRoot },
                 startAdornment: (
-                  <InputAdornment position="start">
-                    <SearchIcon sx={{ color: "white" }} />
+                  <InputAdornment
+                    position="start"
+                    className={styles.inputAdornment}
+                  >
+                    <SearchIcon />
                   </InputAdornment>
                 ),
               }}
               value={search}
               onChange={handleSearchChange}
             />
-            <List sx={{ marginTop: 2 }}>
+            <List className={styles.listContainer}>
               {filteredFriends.length > 0 ? (
                 filteredFriends.map((friend, index) => (
                   <React.Fragment key={index}>
@@ -138,7 +113,10 @@ const ChatDialog = () => {
                       <ListItemAvatar>
                         <Avatar alt={friend.username} src={friend.pfp} />
                       </ListItemAvatar>
-                      <ListItemText primary={friend.username} />
+                      <ListItemText
+                        primary={friend.username}
+                        classes={{ primary: styles.listItemText }}
+                      />
                     </ListItem>
                     <Divider />
                   </React.Fragment>

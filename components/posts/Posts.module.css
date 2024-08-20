@@ -1,6 +1,8 @@
 .container {
   width: 100%;
   max-width: 800px;
+  padding: 0 16px; /* Add padding to ensure content doesn't touch the screen edges */
+  margin: 0 auto; /* Center the container */
 }
 
 .card {
@@ -8,31 +10,103 @@
   background-color: rgba(30, 9, 9, 0.2);
   border-radius: 30px;
   overflow: hidden;
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5); /* Added shadow effect */
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
 }
 
 .actions {
   display: flex;
+  flex-wrap: wrap; /* Allow the icons to wrap on smaller screens */
+  gap: 8px; /* Add spacing between icon buttons */
+}
+
+.iconContainer {
+  display: flex;
+  align-items: center;
 }
 
 .comment {
   display: flex;
+  flex-direction: column; /* Stack avatar and text on smaller screens */
   margin-bottom: 12px;
 }
 
 .commentField {
   margin-top: 20px;
   color: #eee8e8;
-  background-color: #333; /* Make the background darker for visibility */
-  border: 1px solid #555; /* Add a border to make it look defined */
-  border-radius: 4px; /* Rounded corners for better appearance */
+  background-color: #333;
+  border: 1px solid #555;
+  border-radius: 4px;
 }
 
 .commentButton {
   margin-top: 8px;
+  width: 100%; /* Ensure the button takes full width on smaller screens */
 }
 
 .commentSeparator {
-  border: 10;
+  border: 0;
   margin: 8px 0;
+}
+
+/* Media queries for responsive adjustments */
+@media (max-width: 1024px) {
+  .card {
+    margin-bottom: 24px;
+  }
+
+  .actions {
+    flex-direction: row;
+    justify-content: flex-start; /* Align icons to the start (left) */
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    margin-bottom: 24px;
+  }
+
+  .actions {
+    flex-direction: row; /* Keep icons in a row */
+    justify-content: flex-start; /* Align icons to the start (left) */
+  }
+
+  .comment {
+    flex-direction: column;
+  }
+
+  .commentField {
+    width: 100%; /* Ensure the text field takes full width */
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 8px; /* Reduce padding for very small screens */
+  }
+
+  .card {
+    margin-bottom: 32px;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: flex-start; /* Align icons to the start (left) */
+  }
+
+  .iconContainer {
+    width: auto;
+    margin-right: 8px; /* Add margin to the right of each icon */
+  }
+
+  .comment {
+    align-items: flex-start;
+  }
+
+  .commentField {
+    margin-top: 12px;
+  }
+
+  .commentButton {
+    margin-top: 12px;
+  }
 }

@@ -6,6 +6,7 @@ import {
   Avatar,
   TextField,
   InputAdornment,
+  Grid,
 } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
 import VideoLibraryIcon from "@mui/icons-material/VideoLibrary";
@@ -53,74 +54,97 @@ const Navbar = () => {
         }}
       >
         <Toolbar sx={{ justifyContent: "space-between", padding: "0 16px" }}>
-          <div style={{ display: "flex", alignItems: "center" }}>
-            <IconButton
-              color="inherit"
-              aria-label="home"
-              className={styles.icon}
+          <Grid container alignItems="center">
+            <Grid
+              item
+              xs={8}
+              sm={4}
+              md={3}
+              lg={2}
+              sx={{ display: "flex", alignItems: "center" }}
             >
-              <HomeIcon />
-            </IconButton>
-            <IconButton
-              color="inherit"
-              aria-label="videos"
-              className={styles.icon}
+              <IconButton
+                color="inherit"
+                aria-label="home"
+                className={styles.icon}
+              >
+                <HomeIcon />
+              </IconButton>
+              <IconButton
+                color="inherit"
+                aria-label="videos"
+                className={styles.icon}
+              >
+                <VideoLibraryIcon />
+              </IconButton>
+              <IconButton
+                color="inherit"
+                aria-label="groups"
+                className={styles.icon}
+              >
+                <GroupIcon />
+              </IconButton>
+            </Grid>
+
+            <Grid item xs={0} sm={4} md={6} lg={8}>
+              <TextField
+                variant="outlined"
+                placeholder="Search..."
+                size="small"
+                fullWidth
+                sx={{
+                  background: "rgba(255, 255, 255, 0.1)",
+                  borderRadius: "20px",
+                  "& .MuiOutlinedInput-root": {
+                    borderRadius: "20px",
+                    "& fieldset": {
+                      border: "none",
+                    },
+                    "&:hover fieldset": {
+                      border: "none",
+                    },
+                    "&.Mui-focused fieldset": {
+                      border: "none",
+                    },
+                    "& input": {
+                      color: "white", // Set text color to white
+                    },
+                    "& input::placeholder": {
+                      color: "rgba(255, 255, 255, 0.7)", // Set placeholder color to a lighter white
+                    },
+                  },
+                }}
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <SearchIcon sx={{ color: "white" }} />
+                    </InputAdornment>
+                  ),
+                }}
+              />
+            </Grid>
+
+            <Grid
+              item
+              xs={4}
+              sm={4}
+              md={3}
+              lg={2}
+              sx={{ display: "flex", justifyContent: "flex-end" }}
             >
-              <VideoLibraryIcon />
-            </IconButton>
-            <IconButton
-              color="inherit"
-              aria-label="groups"
-              className={styles.icon}
-            >
-              <GroupIcon />
-            </IconButton>
-          </div>
-          <TextField
-            variant="outlined"
-            placeholder="Search..."
-            size="small"
-            sx={{
-              background: "rgba(255, 255, 255, 0.1)",
-              borderRadius: "20px",
-              "& .MuiOutlinedInput-root": {
-                borderRadius: "20px",
-                "& fieldset": {
-                  border: "none",
-                },
-                "&:hover fieldset": {
-                  border: "none",
-                },
-                "&.Mui-focused fieldset": {
-                  border: "none",
-                },
-                "& input": {
-                  color: "white", // Set text color to white
-                },
-                "& input::placeholder": {
-                  color: "rgba(255, 255, 255, 0.7)", // Set placeholder color to a lighter white
-                },
-              },
-            }}
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">
-                  <SearchIcon sx={{ color: "white" }} />
-                </InputAdornment>
-              ),
-            }}
-          />
-          <IconButton
-            color="inherit"
-            aria-label="profile"
-            className={styles.icon}
-          >
-            <Avatar
-              alt="Profile Picture"
-              src="/path/to/your/pfp.jpg"
-              sx={{ width: 24, height: 24 }}
-            />
-          </IconButton>
+              <IconButton
+                color="inherit"
+                aria-label="profile"
+                className={styles.icon}
+              >
+                <Avatar
+                  alt="Profile Picture"
+                  src="/path/to/your/pfp.jpg"
+                  sx={{ width: 24, height: 24 }}
+                />
+              </IconButton>
+            </Grid>
+          </Grid>
         </Toolbar>
       </AppBar>
     </motion.div>

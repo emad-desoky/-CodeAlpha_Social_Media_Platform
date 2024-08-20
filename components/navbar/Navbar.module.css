@@ -6,3 +6,10 @@
 .icon:hover {
   color: #556cdc; /* Hover color */
 }
+
+/* Media queries for further custom styling if needed */
+@media (max-width: 600px) {
+  .icon {
+    margin: 0 5px; /* Adjust spacing for smaller screens */
+  }
+}

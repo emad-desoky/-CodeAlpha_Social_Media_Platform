@@ -1,0 +1,59 @@
+/* ChatDialog.module.css */
+
+.drawerPaper {
+    width: 30vw;
+    max-width: 400px;
+    min-width: 250px;
+    color: white;
+    background: transparent;
+    box-shadow: none;
+  }
+  
+  /* Drawer size for smaller screens */
+  @media (max-width: 900px) {
+    .drawerPaper {
+      width: 40vw;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .drawerPaper {
+      width: 80vw;
+    }
+  }
+  
+  .gradientBackground {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to right, #002147, #4b0082, #002147);
+    background-size: 200% 200%;
+  }
+  
+  .textField {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+  }
+  
+  .outlinedInputRoot {
+    border-radius: 20px;
+  }
+  
+  .inputAdornment {
+    color: white;
+  }
+  
+  .listContainer {
+    margin-top: 16px;
+  }
+  
+  /* List item adjustments for smaller screens */
+  .listItemText {
+    font-size: 1rem;
+  }
+  
+  @media (max-width: 600px) {
+    .listItemText {
+      font-size: 0.875rem;
+    }
+  }
+  
