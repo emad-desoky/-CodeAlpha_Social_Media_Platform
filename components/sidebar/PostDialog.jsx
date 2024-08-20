@@ -13,7 +13,12 @@ import { v4 } from "uuid";
 import axios from "axios";
 import Image from "next/image";
 
-export default function PostDialog({ openDialog, handleCloseDialog, loggedUser, setRefetch}) {
+export default function PostDialog({
+  openDialog,
+  handleCloseDialog,
+  loggedUser,
+  setRefetch,
+}) {
   const [postTitle, setPostTitle] = useState("");
   const [postContent, setPostContent] = useState("");
   const [postImage, setPostImage] = useState("");
@@ -45,12 +50,13 @@ export default function PostDialog({ openDialog, handleCloseDialog, loggedUser, 
       shares: 0,
     };
 
-    axios.post("/api/posts", newPost)
-    .then(res => {
-      console.log("Post Created Successfully: " + res.data);
-      setRefetch(prev => !prev);
-    })
-    .catch(e => console.error("Error creating post: ", e));
+    axios
+      .post("/api/posts", newPost)
+      .then((res) => {
+        console.log("Post Created Successfully: " + res.data);
+        setRefetch((prev) => !prev);
+      })
+      .catch((e) => console.error("Error creating post: ", e));
 
     handleCloseDialog();
   };
@@ -114,14 +120,16 @@ export default function PostDialog({ openDialog, handleCloseDialog, loggedUser, 
           </label>
           {media && (
             <div>
-              {media.endsWith(".mp4") || media.endsWith(".mov") ? (
-                <video src={media} controls style={{ maxWidth: "100%" }} />
-              ) : (
+              {media.startsWith("data:image/") ? (
                 <Image
                   src={media}
                   alt="Post media"
                   style={{ maxWidth: "100%" }}
                 />
+              ) : media.startsWith("data:video/") ? (
+                <video src={media} controls style={{ maxWidth: "100%" }} />
+              ) : (
+                <p>Unsupported media type</p>
               )}
             </div>
           )}
@@ -133,4 +141,4 @@ export default function PostDialog({ openDialog, handleCloseDialog, loggedUser, 
       </animated.div>
     </Dialog>
   );
-};
+}
